@@ -1,0 +1,48 @@
+{
+	"manifestVersion": 1,
+	"id": "ug-azure-tools",
+	"version": "0.1.1",
+	"name": "Ultragon Azure Tools",
+	"publisher": "ultragon",
+	"public": false,
+	"targets": [
+	    {
+	        "id": "Microsoft.VisualStudio.Services"
+	    }
+	],
+	"description": "Build extension for Azure Websites",
+	"categories": [
+		"Build and release"
+	],
+	"tags": [
+		"powershell",
+		"build",
+		"inline",
+		"azure",
+		"azurepowershell"
+	],
+	"branding": {
+		"color": "rgb(36, 43, 50)",
+		"theme": "dark"
+	},
+	"icons": {
+		"default": "icon.png"
+	},
+	"files": [
+		{
+			"path": "AzureWebPowerShellSwap"
+		}
+	],
+	"contributions": [
+	    {
+			"id": "AzureWebPowerShellSwap",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "AzureWebPowerShellSwap"
+			}
+	    }
+	]
+}
