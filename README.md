@@ -5,4 +5,4 @@ This repo contains VSO build tasks and useful PowerShell scripts. It has been bu
 ## Tasks ##
 
 - Azure WebSite Swap build step
--- Used to initiate a swap between two slots in an Azure Website.
+  - Used to initiate a swap between two slots in an Azure Website.
