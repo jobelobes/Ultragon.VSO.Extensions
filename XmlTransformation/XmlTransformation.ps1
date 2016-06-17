@@ -25,8 +25,7 @@ try {
         $targetPath = $sourcePath;
     }
 
-    $scriptPath = (Get-Variable MyInvocation -Scope 1).Value.InvocationName | split-path -parent
-    Add-Type -LiteralPath "$scriptPath\Microsoft.Web.XmlTransform.dll"
+    Add-Type -LiteralPath "_resources\Microsoft.Web.XmlTransform.dll"
 
     $xmldoc = New-Object Microsoft.Web.XmlTransform.XmlTransformableDocument;
     $xmldoc.PreserveWhitespace = $true
