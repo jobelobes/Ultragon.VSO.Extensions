@@ -1,10 +1,13 @@
 {
 	"manifestVersion": 1,
 	"id": "ug-azure-tools",
-	"version": "0.1.5",
+	"version": "0.1.8",
 	"name": "Ultragon Azure Tools",
 	"publisher": "ultragon",
-	"public": true,
+	"galleryFlags": [
+        "Public",
+        "Preview"
+    ],
 	"targets": [
 	    {
 	        "id": "Microsoft.VisualStudio.Services"
@@ -53,6 +56,9 @@
 	"files": [
 		{
 			"path": "AzureWebPowerShellSwap"
+		},
+		{
+			"path": "XmlTransformation"
 		}
 	],
 	"contributions": [
@@ -65,6 +71,17 @@
 			],
 			"properties": {
 				"name": "AzureWebPowerShellSwap"
+			}
+	    },
+	    {
+			"id": "XmlTransformation",
+			"type": "ms.vss-distributed-task.task",
+			"description": "Build task that enables xml transformations of *.config files.",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "XmlTransformation"
 			}
 	    }
 	]

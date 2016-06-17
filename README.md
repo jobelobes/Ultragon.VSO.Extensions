@@ -6,3 +6,6 @@ This repo contains VSO build tasks and useful PowerShell scripts. It has been bu
 
 - Azure WebSite Swap build step
   - Used to initiate a swap between two slots in an Azure Website.
+- Xml Transform build step
+  - Build task that enables xml transformations of *.config files.
+
