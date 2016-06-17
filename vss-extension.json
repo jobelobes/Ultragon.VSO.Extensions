@@ -1,7 +1,7 @@
 {
 	"manifestVersion": 1,
 	"id": "ug-azure-tools",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"name": "Ultragon Azure Tools",
 	"publisher": "ultragon",
 	"public": false,
@@ -27,8 +27,24 @@
 		"theme": "dark"
 	},
 	"icons": {
-		"default": "icon_default.png",
-		"large": "icon_large.png"
+		"default": "images/icon_default.png",
+		"large": "images/icon_large.png"
+	},
+	"screenshots": [
+		{
+	      "path": "images/screenshot_1.png"
+	    }
+	],
+	"links": {
+		"support": "https://github.com/jobelobes/Ultragon.VSO.Extensions/issues"
+	},
+	"content": {
+		"details": {
+			"path": "readme.md"
+		},
+		"license": {
+			"path": "license.md"
+		}
 	},
 	"files": [
 		{
