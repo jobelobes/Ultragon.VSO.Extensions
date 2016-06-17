@@ -38,7 +38,9 @@
 	    }
 	],
 	"links": {
-		"support": "https://github.com/jobelobes/Ultragon.VSO.Extensions/issues"
+		"support": {
+			"uri": "https://github.com/jobelobes/Ultragon.VSO.Extensions/issues"
+	    }
 	},
 	"content": {
 		"details": {
