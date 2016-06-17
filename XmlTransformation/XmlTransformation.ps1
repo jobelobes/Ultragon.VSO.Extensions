@@ -2,27 +2,27 @@
 param
 (
     [String] [Parameter(Mandatory = $true)]
-    $SourceFile,
+    $sourcePath,
 
     [String] [Parameter(Mandatory = $true)]
-    $TransformFile,
+    $transformPath,
 
     [String] [Parameter(Mandatory = $false)]
-    $DestinationFile,
+    $targetPath
 )
 
 Write-Verbose "Entering script XmlTransformation.ps1"
 
 try {
-    if (!$SourceFile -or !(Test-Path -path $SourceFile -PathType Leaf)) {
-        throw "File not found. $SourceFile";
+    if (!$sourcePath -or !(Test-Path -path $sourcePath -PathType Leaf)) {
+        throw "File not found. $sourcePath";
     }
-    if (!$TransformFile -or !(Test-Path -path $TransformFile -PathType Leaf)) {
-        throw "File not found. $TransformFile";
+    if (!$transformPath -or !(Test-Path -path $transformPath -PathType Leaf)) {
+        throw "File not found. $transformPath";
     }
 
-    if(!$DestinationFile){
-        $DestinationFile = $SourceFile;
+    if(!$targetPath){
+        $targetPath = $sourcePath;
     }
 
     $scriptPath = (Get-Variable MyInvocation -Scope 1).Value.InvocationName | split-path -parent
@@ -30,14 +30,14 @@ try {
 
     $xmldoc = New-Object Microsoft.Web.XmlTransform.XmlTransformableDocument;
     $xmldoc.PreserveWhitespace = $true
-    $xmldoc.Load($SourceFile);
+    $xmldoc.Load($sourcePath);
 
-    $transf = New-Object Microsoft.Web.XmlTransform.XmlTransformation($TransformFile);
+    $transf = New-Object Microsoft.Web.XmlTransform.XmlTransformation($transformPath);
     if ($transf.Apply($xmldoc) -eq $false)
     {
         throw "Transformation failed."
     }
-    $xmldoc.Save($SourceFile);    
+    $xmldoc.Save($sourcePath);    
 } catch {
     Write-Error $_.Exception
     exit 1

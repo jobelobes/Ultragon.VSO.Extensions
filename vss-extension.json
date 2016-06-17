@@ -1,7 +1,7 @@
 {
 	"manifestVersion": 1,
 	"id": "ug-azure-tools",
-	"version": "0.1.8",
+	"version": "0.1.17",
 	"name": "Ultragon Azure Tools",
 	"publisher": "ultragon",
 	"galleryFlags": [

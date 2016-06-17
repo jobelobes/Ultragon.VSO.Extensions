@@ -1,19 +1,19 @@
 [CmdletBinding(DefaultParameterSetName = 'None')]
 param
 (
-    [String] [Parameter(Mandatory = $true)]
+    [String] [Parameter(Mandatory)]
     $ConnectedServiceName,
 
-    [String] [Parameter(Mandatory = $true)]
+    [String] [Parameter(Mandatory)]
     $WebSiteName,
 
-    [String] [Parameter(Mandatory = $false)]
+    [String]
     $WebSiteLocation,
 
-    [String] [Parameter(Mandatory = $true)]
+    [String] [Parameter(Mandatory)]
     $OriginSlot,
 
-    [String] [Parameter(Mandatory = $true)]
+    [String] [Parameter(Mandatory)]
     $DestinationSlot
 )
 
@@ -21,16 +21,15 @@ param
 import-module "Microsoft.TeamFoundation.DistributedTask.Task.Internal"
 import-module "Microsoft.TeamFoundation.DistributedTask.Task.Common"
 
-
 # adding System.Web explicitly, since we use http utility
 Add-Type -AssemblyName System.Web
 
 Write-Verbose "Entering script Swap-AzureWebDeployment.ps1"
 
-Write-Host "ConnectedServiceName= $ConnectedServiceName"
-Write-Host "WebSiteName= $WebSiteName"
-Write-Host "OriginSlot= $OriginSlot"
-Write-Host "DestinationSlot= $DestinationSlot"
+Write-Host "ConnectedServiceName = $ConnectedServiceName"
+Write-Host "WebSiteName = $WebSiteName"
+Write-Host "OriginSlot = $OriginSlot"
+Write-Host "DestinationSlot = $DestinationSlot"
 
 $azureWebSiteError = $null
 $publishAzureWebSiteError = $null;
