@@ -1,12 +1,11 @@
 {
 	"manifestVersion": 1,
 	"id": "ug-azure-tools",
-	"version": "0.1.18",
+	"version": "0.1.21",
 	"name": "Ultragon Azure Tools",
 	"publisher": "ultragon",
 	"galleryFlags": [
-        "Public",
-        "Preview"
+        "Public"
     ],
 	"targets": [
 	    {

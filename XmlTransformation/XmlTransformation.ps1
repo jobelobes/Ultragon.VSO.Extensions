@@ -14,6 +14,10 @@ param
 Write-Verbose "Entering script XmlTransformation.ps1"
 
 try {
+
+    
+    
+
     if (!$sourcePath -or !(Test-Path -path $sourcePath -PathType Leaf)) {
         throw "File not found. $sourcePath";
     }
@@ -24,6 +28,10 @@ try {
     if(!$targetPath){
         $targetPath = $sourcePath;
     }
+
+    Write-Host "Source Path: $sourcePath";
+    Write-Host "Transform Path: $transformPath";
+    Write-Host "Target Path: $targetPath";
 
     Add-Type -LiteralPath "_resources\Microsoft.Web.XmlTransform.dll"
 
